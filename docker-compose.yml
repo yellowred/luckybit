@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  app:
+    container_name: app
+    env_file:
+      - .env
+    restart: always
+    build: ./bot
+    command: nodemon server.js
+    volumes:
+      - ./bot:/app
+    ports:
+      - "3000:3000"
